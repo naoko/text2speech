@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# deepspeech
+deepspeech-0.5.1-models/
+audio/
+._deepspeech-0.5.1-models
