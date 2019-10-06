@@ -107,3 +107,6 @@ venv.bak/
 deepspeech-0.5.1-models/
 audio/
 ._deepspeech-0.5.1-models
+
+# IDE
+.idea
