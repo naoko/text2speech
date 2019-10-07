@@ -6,16 +6,18 @@
 </head>
 <body>
   <script>
-    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
     let finalTranscript = '';
-    let recognition = new window.SpeechRecognition()
+    let recognition = new SpeechRecognition();
 
     // event handler will give u a stream of results back
     // until stop talking
     recognition.interimResults = true;
     recognition.maxAlternatives = 10;
     recognition.continuous = true;
-    
+    // recognition.lang = 'en-US';
+    recognition.lang = 'ja';
+
     recognition.onresult = (event) => {
       let interimTranscript = '';
       for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
@@ -27,7 +29,7 @@
         }
       }
       document.querySelector('body').innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</>';
-    }
+    };
     recognition.start();
 
   </script>

@@ -1,2 +1,4 @@
 deepspeech
-
+PyAudio
+scipy
+wave
