@@ -21,6 +21,17 @@ make download_test_audio
 deepspeech --model deepspeech-0.5.1-models/output_graph.pbmm --alphabet deepspeech-0.5.1-models/alphabet.txt --lm deepspeech-0.5.1-models/lm.binary --trie deepspeech-0.5.1-models/trie --audio audio/2830-3980-0043.wav
 ```
 
+Run Run!
+========
+The python script will record your voice for 5 seconds and predict what it said with DeepSpeech trained model
+```bash
+python run.py
+```
+Okay so I've recorded very simple "English" with my Japanese accent.
+I said "Hello! My name is Naoko"
+and what was predicted was "a lohelo my man hesin out cae"
+Seriously? Wow... makes no sense. Not even close...
+
 
 WebSpeechAPI
 =============
@@ -31,6 +42,10 @@ You can host this file on web server and start talking.
 python -m http.server 5000 --bind 127.0.0.1
 ```
 Open: http://127.0.0.1:5000/webspeech.html
+
+And the result of me saing "Hello! My name is Naoko" turned out to be "hello my name is Malcom".
+So yeah, much better than DeepSpeech....
+
 
 Generally, the default speech recognition system
  available on the device will be used for 
